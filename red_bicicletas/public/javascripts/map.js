@@ -7,7 +7,7 @@ let myMap = L.map('main_map').setView([4.6534649, -74.0836453], 13);
         maxZoom:18,
     }).addTo(myMap);
 
-   
+
 
     $.ajax({
         dataType: "json",
@@ -15,7 +15,7 @@ let myMap = L.map('main_map').setView([4.6534649, -74.0836453], 13);
         success: function(result){
             console.log(result);
             result.bicicletas.forEach(function(bici){
-                let  marker = L.marker(bici.ubicacion, {title: bici.id}).addTo(myMap);            
+                L.marker(bici.ubicacion, {title: bici.id}).addTo(myMap);            
             });
         }
     })
